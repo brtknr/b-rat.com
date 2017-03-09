@@ -5,13 +5,13 @@ date_default_timezone_set("Europe/Dublin");
 
 if ($_POST["addThought"]){
 
-	$myFile = "thoughts.php";
+	$myFile = "thoughts.html";
 	if (!file_exists($myFile)) touch($myFile);
 	$fh = fopen($myFile, "r") or die("Cannot open thoughts.");
 	$fcontent = fread($fh, filesize($myFile));
 	fclose($fh);
 
-	$towrite = "<p align=\"center\">\n\"".$_POST["thought"]."\" \n<font size=1>".date("M Y")."</font>\n\n".$fcontent;
+	$towrite = "<p align=\"center\">\n\"".$_POST["thought"]."\" \n<font size=1>".date("M Y")."</font></p>\n\n".$fcontent;
 	$fh2 = fopen($myFile, 'w+') or die("Cannot open thoughts.");
 	fwrite($fh2, $towrite);
 	fclose($fh2);
@@ -32,7 +32,6 @@ if ($_POST["addThought"]){
 		</td>
 	</tr>
 	<?include ("footer.php")?>
-    Hello
 </table>
 
 </body>

@@ -5,15 +5,13 @@ $s = $_GET["s"];
 $photoDir = "gallery/".($s?($s."/"):"");
 ?>
 
-<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
-<script src="js/prototype.js" type="text/javascript"></script>
-<script src="js/scriptaculous.js?load=effects,builder" type="text/javascript"></script>
-<script src="js/lightbox.js" type="text/javascript"></script>
+<link href="css/lightbox.css" rel="stylesheet" />
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/lightbox.js"></script>
 
 <table border="0" width="100%" height="100%">
 	<tr>
 		<td valign="top">
-
 
 <?php
 include $photoDir."blurb.txt";
